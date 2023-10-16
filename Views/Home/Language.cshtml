@@ -1,0 +1,188 @@
+﻿@{
+}
+<div class="position-relative m-4">
+    <div class="progress" role="progressbar" aria-label="Progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="height: 5px;">
+        <div class="progress-bar" style="width: 0%"></div>
+    </div>
+    <button type="button" class="position-absolute top-0 start-0 translate-middle btn btn-sm btn-primary rounded-pill" style="width: 2rem; height: 2rem;" id="step1">1</button>
+    <button type="button" class="position-absolute top-0 start-50 translate-middle btn btn-sm btn-primary rounded-pill" style="width: 2rem; height: 2rem;" id="step2" >2</button>
+    <button type="button" class="position-absolute top-0 start-100 translate-middle btn btn-sm btn-primary rounded-pill" style="width: 2rem; height: 2rem;" id="step3">3</button>
+</div>
+
+<form class="row g-3" id="form1">
+    <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Email*</label>
+        <input type="email" class="form-control" id="inputEmail4">
+    </div>
+    <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Password*</label>
+        <input type="password" class="form-control" id="inputPassword4">
+    </div>
+    <div class="col-12">
+        <label for="inputAddress" class="form-label">Address*</label>
+        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+    </div>
+    <div class="col-12">
+        <label for="inputAddress2" class="form-label">Address 2</label>
+        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+    </div>
+    <div class="col-md-6">
+        <label for="inputCity" class="form-label">City*</label>
+        <input type="text" class="form-control" id="inputCity">
+    </div>
+    <div class="col-md-4">
+        <label for="inputState" class="form-label">State*</label>
+        <select id="inputState" class="form-select">
+            <option selected>Choose...</option>
+            <option>...</option>
+        </select>
+    </div>
+    <div class="col-md-2">
+        <label for="inputZip" class="form-label">Zip*</label>
+        <input type="text" class="form-control" id="inputZip">
+    </div>
+    <div class="col-12">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck">
+            <label class="form-check-label" for="gridCheck">
+                Save Information
+            </label>
+        </div>
+    </div>
+    <div class="col-12">
+        <button type="button" class="btn btn-primary" id="continueButton">Continue</button>
+    </div>
+</form>
+
+<form class="row g-3 mt-5" id="form2" style="display: none;">
+    <h1 style="text-align: center;">Select what languages you are interested in</h1>
+    <div class="row mb-3">
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr);">
+            <!-- Language list -->
+            @{
+                Dictionary<string, List<string>> languagesByRegion = new Dictionary<string, List<string>>
+            {
+            { "The Americas", new List<string>
+            {
+            "Brazilian Portuguese", "Canadian French", "English", "French Creole", "Haitian Creole",
+            "Navajo", "Quechua", "Spanish"
+            }
+            },
+            { "Western Europe", new List<string>
+            {
+            "Catalan", "Danish", "Dutch", "Faroese", "Finnish", "Flemish", "French", "German",
+            "Greek", "Icelandic", "Italian", "Norwegian", "Portuguese", "Spanish", "Swedish",
+            "UK English / British English"
+            }
+            },
+            { "Central & Eastern Europe", new List<string>
+            {
+            "Belarusian", "Bosnian", "Bulgarian", "Croatian", "Czech", "Estonian", "Hungarian",
+            "Latvian", "Lithuanian", "Macedonian", "Polish", "Romanian", "Russian", "Serbian",
+            "Slovak", "Slovenian", "Turkish", "Ukrainian"
+            }
+            },
+            { "Africa", new List<string>
+            {
+            "Amharic (Ethiopia)", "Dinka (Sudan)", "Ibo (Nigeria)", "Kirundi", "Mandinka",
+            "Nuer (Nilo-Saharan)", "Oromo (Ethiopia)", "Kinyarwanda", "Shona (Zimbabwe)",
+            "Somali", "Swahili", "Tigrigna (Ethiopia)", "Wolof", "Xhosa", "Yoruba", "Zulu"
+            }
+            },
+            { "Middle East", new List<string>
+            {
+            "Arabic", "Dari", "Farsi", "Hebrew", "Kurdish", "Pashtu", "Punjabi", "Urdu (Pakistan)"
+            }
+            },
+            { "Central Asia", new List<string>
+            {
+            "Armenian", "Azerbaijani", "Georgian", "Kazakh", "Mongolian", "Turkmen", "Uzbek"
+            }
+            },
+            { "Southeast Asia", new List<string>
+            {
+            "Bengali", "Cham", "Chamorro (Guam)", "Gujarati (India)", "Hindi", "Indonesian",
+            "Khmer (Cambodia)", "Kmhmu (Laos)*", "Korean", "Laotian", "Malayalam", "Malay",
+            "Marathi (India)", "Marshallese", "Nepali", "Sherpa*", "Tamil", "Thai", "Tibetan",
+            "Trukese (Micronesia)", "Vietnamese"
+            }
+            },
+            { "Far East", new List<string>
+            {
+            "Amoy", "Burmese", "Cantonese", "Chinese", "Chinese–Simplified", "Chinese–Traditional",
+            "Chiu Chow", "Chow Jo", "Fukienese", "Hakka (China)", "Hmong", "Hainanese", "Japanese",
+            "Mandarin", "Mien", "Shanghainese*", "Taiwanese", "Taishanese"
+            }
+            },
+            { "South Pacific", new List<string>
+            {
+            "Fijian", "Palauan*", "Samoan", "Tongan"
+            }
+            },
+            { "Philippines", new List<string>
+            {
+            "Bikol", "Cebuano", "Ilocano", "Ilongo", "Pampangan", "Pangasinan", "Tagalog", "Visayan"
+            }
+            },
+            { "Additional Languages and Services", new List<string>
+            {
+            "American Sign Language", "Braille", "Esperanto", "Latin", "Phonetic", "Real Time & Remote Captioning",
+            "Tactile", "Limited Resources Available"
+            }
+            }
+            };
+            }
+
+            @foreach (var region in languagesByRegion)
+            {
+                <div style="border: 1px solid #ccc; padding: 10px;">
+                    <h5>@region.Key</h5>
+                    @for (int i = 0; i < region.Value.Count; i++)
+                    {
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="@($"gridCheck{i}_{region.Key}")" name="languages" value="@region.Value[i]">
+                            <label class="form-check-label" for="@($"gridCheck{i}_{region.Key}")">
+                                @region.Value[i]
+                            </label>
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+    <button type="button" class="btn btn-primary" id="continueButton2">Continue</button>
+</form>
+
+<form class="row g-3" id="form3" style="display: none;">
+    <h1 style="text-align: center; padding: 10px;">You're almost there! Just a few more questions!</h1>
+    <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Are you bilingual/multilingual?</label>
+    </div>
+    <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Do you have any experience learning languages?</label>
+    </div>
+    <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault3">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Do you have any resources outside of our services or any other language learning service?</label>
+    </div>
+    <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault4">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Are you residing in a country whose language you cannot speak?</label>
+    </div>
+    <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault5">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Have you had success learning other languages?</label>
+    </div>
+    <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault6">
+        <label class="form-check-label" for="flexSwitchCheckDefault">If you know more than three languages, check this button.</label>
+    </div>
+    <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Finish</a>
+
+</form>
+
+<script src="~/js/Language.js"></script>
+
+

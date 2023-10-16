@@ -1,0 +1,22 @@
+.progressbar[b-34irmk2qni]{
+
+}
+.typing-text[b-34irmk2qni]{
+    position: absolute;
+    bottom:20px;
+    background: rgba(0,0,0,0.1);
+    padding: 10px 20px;
+    font-size: 18px;
+}
+
+.text-speed-input[b-34irmk2qni] {
+    width: 50px;
+    padding: 5px;
+    font-size: 18px;
+    border: none;
+    text-align: center;
+}
+
+.text-speed-input:focus[b-34irmk2qni] {
+    outline: none;
+}

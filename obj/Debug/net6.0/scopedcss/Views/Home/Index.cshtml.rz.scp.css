@@ -1,0 +1,170 @@
+.button-container[b-x931qaftqw] {
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+.button-container .more-button[b-x931qaftqw] {
+    grid-column: span 2; /* Makes the "More" button span both columns */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button-container button[b-x931qaftqw] {
+    display: flex;
+    align-items: center;
+    gap: 4px; 
+    padding: 5px;
+}
+.button-container img[b-x931qaftqw] {
+    max-width: 40px; 
+    max-height: 40px;
+}
+
+.background-container[b-x931qaftqw] {
+    position: relative;
+    background-image: url("/images/studying.jpg"); 
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 50vh;
+    overflow: hidden; /* Hide any content outside the container's height */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Move content to the top of the container */
+    align-items: center;
+    border-radius: 15px; 
+    border: 1px solid rgba(255, 255, 255, 0.5); 
+}
+
+.overlay[b-x931qaftqw] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+}
+h3[b-x931qaftqw] {
+    text-align: center;
+    color: white; 
+}
+
+.text-positioning[b-x931qaftqw] {
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 50vh;
+}
+
+.more-options[b-x931qaftqw] {
+    display: none;
+    grid-column: 2;
+    grid-row: 3;
+}
+.more-options.active[b-x931qaftqw] {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    align-items: center;
+    justify-items: center;
+}
+
+/*Paragraphs with images below main image*/
+.content-container[b-x931qaftqw] {
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.content[b-x931qaftqw] {
+    flex: 1;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    margin: 5px;
+    overflow: hidden; /* Clip the animated text overflow */
+}
+
+.animated-text[b-x931qaftqw] {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    animation: riseUp-b-x931qaftqw 2s ease forwards; /* Animation will only play once */
+}
+
+@keyframes riseUp-b-x931qaftqw {
+    0% {
+        transform: translateY(50px); /* Adjust the distance text rises */
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/*Subscription text below*/
+.outer-box[b-x931qaftqw] {
+    text-align: center;
+    padding: 20px;
+    background-color: #4D95FF; /* Blue background color */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    margin: 5px;
+    width: 500px; /* Set the desired width for the outer box */
+    margin: 0 auto; /* Center the box horizontally */
+    color: #fff; 
+}
+
+
+.outer-text[b-x931qaftqw] {
+    font-size: 36px;
+    padding: 15px;
+}
+
+.inner-boxes[b-x931qaftqw] {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.inner-box[b-x931qaftqw] {
+    padding: 10px;
+    background-color: #c0c0c0;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+    .inner-box:nth-child(1)[b-x931qaftqw] {
+        background-color: #75ABFF;
+        color: #001f3f; 
+    }
+    .inner-box:nth-child(2)[b-x931qaftqw] { 
+        background-color: #001f3f; 
+        color: #75ABFF; 
+    }
+
+    .inner-box:hover[b-x931qaftqw] {
+        transform: scale(1.05); 
+    }
+
+.inner-box p[b-x931qaftqw] {
+    font-size: 16px;
+}
+
+

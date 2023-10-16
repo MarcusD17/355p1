@@ -1,0 +1,31 @@
+.text-speed-input[b-1lw7ep1gys] {
+    width: 50px;
+    padding: 5px;
+    font-size: 18px;
+    border: none;
+    text-align: center;
+    
+}
+
+.text-speed-input:focus[b-1lw7ep1gys] {
+    outline: none;
+}
+
+.section-title[b-1lw7ep1gys] {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.section-paragraph[b-1lw7ep1gys] {
+    margin-left: 20px;
+}
+
+
+.section-list[b-1lw7ep1gys] {
+    list-style-type: decimal;
+    margin-left: 20px;
+}
+
+.list-item[b-1lw7ep1gys] {
+    margin-left: 20px;
+}

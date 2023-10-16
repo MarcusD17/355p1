@@ -1,0 +1,81 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<script src="~/js/index.js"></script>
+<div class="background-container">
+    <div class="text-center overlay">
+        <h3 class="text-h">Which language do you want to speak?</h3>
+        <div class="button-container">
+            <button type="button" class="btn btn-primary">
+                <a asp-controller="Home" asp-action="Language" class="link-light">
+                    <img src="/images/ENG_flag.png" alt="English Flag"> English
+                </a>
+            </button>
+            <button type="button" class="btn btn-primary">
+                <a asp-controller="Home" asp-action="Language" class="link-light">
+                    <img src="/images/FRA_flag.png" alt="French Flag"> French
+                </a>
+            </button>
+            <button type="button" class="btn btn-primary">
+                <a asp-controller="Home" asp-action="Language" class="link-light">
+                    <img src="/images/JAP_flag.png" alt="Japanese Flag"> Japanese
+                </a>
+            </button>
+            <button type="button" class="btn btn-primary">
+                <a asp-controller="Home" asp-action="Language" class="link-light">
+                    <img src="/images/RUS_flag.png" alt="Russian Flag"> Russian
+                </a>
+            </button>
+            <button type="button" class="btn btn-primary more-button">
+                <a asp-controller="Home" asp-action="Language" class="link-light">More</a>
+            </button>
+            <div class="more-options" id="more-options">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="content-container">
+    <div class="content">
+        <p class="animated-text">Hi, welcome to Delta Languages!</p>
+    </div>
+    <div class="content">
+        <p class="animated-text">Hallo, willkommen bei Delta Languages!</p>
+    </div>
+    <div class="content">
+        <p class="animated-text">こんにちは、デルタ言語へようこそ!</p>
+    </div>
+</div>
+
+<div class="outer-box">
+    <h1 class="outer-text">Subscription Options</h1>
+    <div class="inner-boxes">
+        <div class="inner-box">
+            <p class="fw-semibold">Get unlimited access to hundreds of award-winning lessons designed for all learners, based on level and time commitment.</p>
+        </div>
+        <div class="inner-box">
+            <p class="fw-semibold">You’ll have access to live virtual classes taught by top language teachers, available at a variety of days, times and levels.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    //animated-text elements rise when they come into view
+    const animatedTextElements = document.querySelectorAll('.animated-text');
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('play-animation');
+                observer.unobserve(entry.target);
+            }
+        });
+    });
+
+    animatedTextElements.forEach((element) => {
+        observer.observe(element);
+    });
+
+</script>
+
+
